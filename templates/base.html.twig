@@ -5,14 +5,32 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {% block stylesheets %}
-            {{ ux_controller_link_tags() }}
-        {% endblock %}
-
-        {% block javascripts %}
-{% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+            <link rel="stylesheet" href="/styles/bootstrap/bootstrap.min.css">
+            <link rel="stylesheet" href="/styles/main.css">
+            <link rel="stylesheet" href="/styles/line-awesome/css/line-awesome.min.css">
+        {% endblock %}        
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+                {% block header %}
+
+                {% endblock %}  
+                {% block main %}
+                {% endblock %}
+               
+        
+        {% endblock %}
     </body>
+        {% block footer %}
+            <footer class="footer">
+                <a href="https://facebook.com/chamsouney"><img src="/imgs/fb.png" alt="logo fb"></a>
+                <a href="https://github.com/toutcourtc"></a>
+            </footer>
+            <style>
+                
+            </style>         
+        {% endblock %}
+        {% block javascripts %}
+            <script src="/styles/bootstrap/bootstrap.bundle.min.js"></script>
+        {% endblock %}
 </html>

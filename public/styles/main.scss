@@ -1,0 +1,93 @@
+body{    
+    background-color : #EAECEE;
+}
+h1,h2{
+    text-align : center;
+}
+#navbar{
+    display : flex;
+    justify-content : space-between;
+    border : 1px solid red;
+    background-color : black;
+    height : 40px;
+    &>*{
+        margin : 0 20px;
+    }
+    .menu{
+        display : flex;
+        button{
+            width : 200px;
+            margin : 0 10px;
+        }
+    }
+
+    .log, a{
+        color : white;
+        text-decoration : none;
+        padding : 3px;
+        border-radius : 7px;
+    }
+    a, button{
+        text-transform : uppercase;
+        &:hover{
+            background-color : #0a58ca;
+        }
+    }
+    .icons{
+        font-size : 24px;
+    }
+}
+.main{
+    // border : px solid red;
+    max-width : 900px;
+    margin : 40px auto;
+    border : 2px solid #E5E8E8;;
+    background-color : #D5D8DC;
+    box-shadow : 20px -20px grey;
+    border-radius : 15px;
+    min-height : 100vh;
+}
+.home-img{
+    width : 100%;
+    padding : 10px;
+    img{
+        width : 100%;
+        border-radius : 7%;
+        // margin : 10px;
+    }
+}
+.table{
+    thead th{
+        border : 2px solid black;
+        text-transform : uppercase;
+        vertical-align : top;
+    }
+    tbody td{
+        border-right : 1px solid #E5E8E8;
+    }
+    th, td{
+        text-align : center;
+    }
+}
+.display-box form{
+    width : 300px;
+    margin : 20px auto;
+    button{
+        margin : 5px;
+    }
+    #vol>*{
+        display : flex;
+        flex-direction : column;
+        text-align : center;
+        line-height : 2em;
+        margin : 0 3px;
+    }
+}
+footer.footer{
+        text-align : center;
+        background-color : black;
+        img{
+            width : 30px;
+            border-radius : 50%;        
+        }
+}

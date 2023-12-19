@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Ville{% endblock %}
+
+{% block body %}
+
+    {% include "/includes/header.html.twig" %}
+    <h1>Ajouter une ville</h1>
+
+    <main class="main">
+        {% block main %}
+        
+        <div class="display-box" style="text-align : center">
+                {{ include('ville/_form.html.twig') }}
+
+            <a href="{{ path('app_ville_index') }}"><i class="las la-backward icons" style="transform:scale(1.5, 1.5);  margin : 0 150px"></i></a>
+        
+        </div>
+        
+        {% endblock %}
+    
+    </main>
+
+    
+{% endblock %}

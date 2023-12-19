@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Vol{% endblock %}
+
+{% block body %}
+    {% include '/includes/header.html.twig' %}
+
+    <h1>Enregistrer un vol</h1>
+
+    <main class="main">
+        {% block main %}
+            <div class="display-box" style="text-align: center">
+                {{ include('vol/_form.html.twig') }}
+
+            <a href="{{ path('app_vol_index') }}"><i class="las la-backward icons" style="transform: scale(1.5, 1.5)"></i></a>
+            </div>
+        
+        {% endblock %}
+    
+    </main>
+
+    
+{% endblock %}

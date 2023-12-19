@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les vols disponibles{% endblock %}
+
+{% block body %}
+    {% include '/includes/header.html.twig' %}
+    <h1>Les vols disponibles</h1>
+    <main class="main">
+        
+        {% block main %}
+        <div class="display-box">
+        <table class="table">
+            <thead>
+                <tr>
+                    {# <th>Id</th> #}
+                    <th>Numero de vol</th>
+                    <th>Depart</th>
+                    <th>Arrivee</th>
+                    <th>Ville de départ</th>
+                    <th>Ville d'arrivée</th>
+                    <th>Prix</th>
+                    <th>Reduction</th>
+                    <th>Nb_places</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for vol in vols %}
+                <tr>
+                    {# <td>{{ vol.id }}</td> #}
+                    <td>{{ vol.numeroVol }}</td>
+                    <td>{{ vol.depart ? vol.depart|date('H:i') : '' }}</td>
+                    <td>{{ vol.arrivee ? vol.arrivee|date('H:i') : '' }}</td>
+                    <td>{{ vol.villeDepart.nom}}</td>
+                    <td>{{ vol.villeArrivee.nom}}</td>
+                    <td>{{ vol.prix }}</td>
+                    <td>{{ vol.reduction }}</td>
+                    <td>{{ vol.nbPlaces }}</td>
+                    <td>
+                        <a href="{{ path('app_vol_show', {'id': vol.id}) }}" class="show"><i class="las la-eye icons" style="transform : scale(1.5, 1.5)"></i></a>                        {% if app.user and "ROLE_ADMIN" in app.user.roles %}
+                            <a href="{{ path('app_vol_edit', {'id': vol.id}) }}" class="edit"><i class="las la-pen icons"></i></a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endblock %}
+    </main>    
+{% endblock %}
